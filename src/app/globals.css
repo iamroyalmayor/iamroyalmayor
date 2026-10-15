@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist/wght.css";
+@import "@fontsource-variable/geist-mono/wght.css";
+
+@theme {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+
+  /* Operations-console palette: solid surfaces only, no gradients. */
+  --color-void: #0b0d0f;
+  --color-panel: #121518;
+  --color-raised: #181c20;
+  --color-line: #242a2f;
+  --color-line-strong: #343b42;
+  --color-text: #e8eaeb;
+  --color-soft: #c4c9cd;
+  --color-muted: #8f979e;
+  --color-faint: #5d656c;
+
+  /* One UI signal for links, focus and selection. */
+  --color-signal: #8cbcf0;
+  --color-signal-dim: #1b2a3a;
+
+  /* Status: always paired with a label, never colour alone. */
+  --color-ok: #4cbf8a;
+  --color-ok-dim: #132a20;
+  --color-warn: #d9a441;
+  --color-warn-dim: #2d2414;
+  --color-info: #6fa8dc;
+  --color-info-dim: #152434;
+  --color-crit: #e5675d;
+
+  /* Chart series (validated for the dark panel surface). */
+  --color-series-1: #4596d2;
+  --color-series-2: #bc8034;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--color-line-strong) var(--color-void);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--color-void);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    caret-color: var(--color-signal);
+    overflow-x: clip;
+    font-feature-settings: "ss01";
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-void);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  input,
+  textarea,
+  button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .h-section {
+    font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Prose for technical write-ups. */
+  .prose-tech p + p {
+    margin-top: 1rem;
+  }
+  .prose-tech code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--color-raised);
+    border: 1px solid var(--color-line);
+    border-radius: 4px;
+    padding: 0.05em 0.35em;
+  }
+}
+
+/* Grid paper behind the hero: drawn with an SVG pattern, not gradients. */
+.grid-paper {
+  background-color: var(--color-void);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%23161a1e' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
