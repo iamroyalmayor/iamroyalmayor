@@ -20,7 +20,7 @@ They arrive from a link (CV, LinkedIn, GitHub, proposal) and decide within a min
 
 ## Product Purpose
 
-Personal portfolio for Ademola: present him as a multidisciplinary engineer who designs, builds, integrates, troubleshoots, and deploys real-world systems across cybersecurity, infrastructure, cloud, software, and smart systems. Success = a visitor understands the breadth, sees concrete projects, and contacts him.
+Personal portfolio for Ademola: present Ademola as a multidisciplinary engineer who designs, builds, integrates, troubleshoots, and deploys real-world systems across cybersecurity, infrastructure, cloud, software, and smart systems. Success = a visitor understands the breadth, sees concrete projects, and gets in touch.
 
 ## Positioning
 
@@ -30,13 +30,17 @@ Not "a developer" and not "a network guy": one person who works the whole stack 
 
 Disciplines: cybersecurity & ethical hacking; network engineering & infrastructure; cloud & virtualization (Proxmox, Docker); software (Python, FastAPI, JS/TS, Next.js, PostgreSQL, Supabase); Linux administration; smart home / ELV; solar & inverter integration.
 
-Projects: KiraOSINT, KiraCall, WellsTV, Proxmox Cloud Platform (concept), NowNowNG, Network & Infrastructure Engineering work.
+Products: KiraOSINT, KiraCall, WellsTV, Proxmox Cloud Platform (concept). NowNowNG removed at user request.
+
+Engineering project pages (titles supplied by user): Enterprise Network & VLAN Segmentation; Linux Server Administration & Hardening; Proxmox Virtualization & Private Cloud; Network Monitoring & Alerting; Wazuh SIEM & SOC Lab; Vulnerability Assessment & Remediation; Docker, CI/CD & Automated Deployment; Ansible Automation; Network Traffic Analysis & Incident Investigation; Cloud Infrastructure & Security Automation. Each must be labelled production, personal, or lab.
 
 ## Brand Commitments
 
 - Name: Ademola.
 - Headline direction from the brief: "I build, secure, and connect technology that works in the real world."
-- Brief-pinned visuals: light theme primary; restrained single accent (electric/cobalt blue or subtle green); thin borders; no gradient identity, no glassmorphism, no neon, no glow; Lucide icons; no emoji as design elements.
+- Visual direction (user, 2026-10-15): dark and mature with a "cyberspace" feel; solid colours only, no gradients. The first light transit-map design was rejected.
+- Second brief: restrained infrastructure-dashboard language: clean diagrams, terminal snippets, monitoring charts, status indicators, documentation previews. No fake terminal animations, decorative code, or skill percentages.
+- Lucide icons; no emoji as design elements.
 
 ## Evidence on Hand
 

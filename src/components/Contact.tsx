@@ -25,41 +25,31 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="border-t border-rule py-20 md:py-28">
+    <section id="contact" aria-labelledby="contact-title" className="border-t border-line py-20 md:py-28">
       <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-5">
-          <h2
-            id="contact-title"
-            className="text-[clamp(2.25rem,4.6vw,3.75rem)] leading-[1.03] font-[820] tracking-[-0.035em]"
-          >
+          <h2 id="contact-title" className="text-[clamp(2rem,4vw,3.25rem)] leading-[1.05] font-semibold tracking-[-0.04em]">
             Have a challenging idea? Let&apos;s make it work.
           </h2>
           <p className="mt-6 max-w-[30rem] text-lg text-muted">
-            Projects, roles, or a problem you can&apos;t pin down yet. Tell me what you&apos;re dealing with and
-            I&apos;ll reply personally.
+            A role, a project, or a problem you can&apos;t pin down yet. Tell me what you&apos;re dealing with and I&apos;ll
+            reply personally.
           </p>
 
-          <div className="mt-10 border-t border-ink">
-            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-rule py-5">
-              <a
-                href={`mailto:${site.email}`}
-                className="group flex min-w-0 items-center gap-3 rounded-sm font-semibold"
-              >
-                <Mail className="size-5 shrink-0 text-muted" aria-hidden="true" />
-                <span className="truncate text-[1.0625rem] underline decoration-rule-strong underline-offset-4 transition-colors group-hover:text-signal group-hover:decoration-signal sm:text-lg">
+          <div className="mt-10 overflow-hidden rounded-lg border border-line bg-panel">
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-line px-4 py-4">
+              <a href={`mailto:${site.email}`} className="group flex min-w-0 items-center gap-3 rounded-sm font-medium">
+                <Mail className="size-[18px] shrink-0 text-muted" aria-hidden="true" />
+                <span className="truncate underline decoration-line-strong underline-offset-4 transition-colors group-hover:text-signal group-hover:decoration-signal">
                   {site.email}
                 </span>
               </a>
               <button
                 type="button"
                 onClick={copyEmail}
-                className="inline-flex items-center gap-1.5 rounded-full border border-rule px-3 py-1.5 text-sm font-semibold text-ink-soft transition-colors hover:border-ink"
+                className="inline-flex items-center gap-1.5 rounded-md border border-line px-2.5 py-1 font-mono text-xs text-soft transition-colors hover:border-line-strong hover:text-text"
               >
-                {copied === "done" ? (
-                  <Check className="size-4 text-go" aria-hidden="true" />
-                ) : (
-                  <Copy className="size-4" aria-hidden="true" />
-                )}
+                {copied === "done" ? <Check className="size-3.5 text-ok" aria-hidden="true" /> : <Copy className="size-3.5" aria-hidden="true" />}
                 {copied === "done" ? "Copied" : copied === "failed" ? "Copy failed" : "Copy"}
               </button>
               <span className="sr-only" role="status">
@@ -72,17 +62,14 @@ export function Contact() {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between gap-4 border-b border-rule py-5"
+                className="group flex items-center justify-between gap-4 border-b border-line px-4 py-4 transition-colors last:border-0 hover:bg-raised"
               >
                 <span className="flex items-center gap-3">
-                  <Icon className="size-5 text-muted" />
-                  <span className="font-semibold">{label}</span>
-                  <span className="font-mono text-sm text-muted">@{handle}</span>
+                  <Icon className="size-[18px] text-muted" />
+                  <span className="font-medium">{label}</span>
+                  <span className="font-mono text-xs text-muted">@{handle}</span>
                 </span>
-                <ArrowUpRight
-                  className="size-5 text-faint transition-[color,transform] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-signal"
-                  aria-hidden="true"
-                />
+                <ArrowUpRight className="size-4 text-faint transition-colors group-hover:text-signal" aria-hidden="true" />
               </a>
             ))}
           </div>
